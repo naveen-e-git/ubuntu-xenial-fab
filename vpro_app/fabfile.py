@@ -88,7 +88,7 @@ def app_c():
 def app_u():
      sudo("apt update -y")
      sudo("apt install openjdk-8-jdk -y")
-     sudo("yum install wget -y")
+     sudo("apt install wget -y")
      with cd("/root"):
          sudo("wget http://www-eu.apache.org/dist/tomcat/tomcat-8/v8.5.33/bin/apache-tomcat-8.5.33.tar.gz")
          sudo("mv apache-tomcat-8.5.33.tar.gz /opt/apache-tomcat-8.5.33.tar.gz")
