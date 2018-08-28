@@ -75,30 +75,30 @@ def app_c():
      sudo("yum install  java-1.8.0-openjdk -y")
      sudo("yum install wget -y")
      with cd("/root"):
-         sudo("wget http://www-eu.apache.org/dist/tomcat/tomcat-8/v8.5.32/bin/apache-tomcat-8.5.32.tar.gz")
-         sudo("mv apache-tomcat-8.5.32.tar.gz /opt/apache-tomcat-8.5.32.tar.gz")
+         sudo("wget http://www-eu.apache.org/dist/tomcat/tomcat-8/v8.5.33/bin/apache-tomcat-8.5.33.tar.gz")
+         sudo("mv apache-tomcat-8.5.33.tar.gz /opt/apache-tomcat-8.5.33.tar.gz")
      with cd("/opt"):
-          sudo("tar -xvzf apache-tomcat-8.5.32.tar.gz")
-          sudo("rm -rf /opt/apache-tomcat-8.5.32/webapps/ROOT")
-          sudo("cp /root/VProfile/target/vprofile-v1.war /opt/apache-tomcat-8.5.32/webapps/ROOT.war")
+          sudo("tar -xvzf apache-tomcat-8.5.33.tar.gz")
+          sudo("rm -rf /opt/apache-tomcat-8.5.33/webapps/ROOT")
+          sudo("cp /root/VProfile/target/vprofile-v1.war /opt/apache-tomcat-8.5.33/webapps/ROOT.war")
           sudo("systemctl stop firewalld")
           sudo("systemctl disable firewalld")
-          sudo("/opt/apache-tomcat-8.5.32/bin/startup.sh")
+          sudo("/opt/apache-tomcat-8.5.33/bin/startup.sh")
 
 def app_u():
      sudo("apt update -y")
      sudo("apt install openjdk-8-jdk -y")
      sudo("yum install wget -y")
      with cd("/root"):
-         sudo("wget http://www-eu.apache.org/dist/tomcat/tomcat-8/v8.5.32/bin/apache-tomcat-8.5.32.tar.gz")
-         sudo("mv apache-tomcat-8.5.32.tar.gz /opt/apache-tomcat-8.5.32.tar.gz")
+         sudo("wget http://www-eu.apache.org/dist/tomcat/tomcat-8/v8.5.33/bin/apache-tomcat-8.5.33.tar.gz")
+         sudo("mv apache-tomcat-8.5.33.tar.gz /opt/apache-tomcat-8.5.33.tar.gz")
      with cd("/opt"):
-          sudo("tar -xvzf apache-tomcat-8.5.32.tar.gz")
-          sudo("rm -rf /opt/apache-tomcat-8.5.32/webapps/ROOT")
-          sudo("cp /root/VProfile/target/vprofile-v1.war /opt/apache-tomcat-8.5.32/webapps/ROOT.war")
+          sudo("tar -xvzf apache-tomcat-8.5.33.tar.gz")
+          sudo("rm -rf /opt/apache-tomcat-8.5.33/webapps/ROOT")
+          sudo("cp /root/VProfile/target/vprofile-v1.war /opt/apache-tomcat-8.5.33/webapps/ROOT.war")
           sudo("systemctl stop ufw")
           sudo("ufw disable")
-          sudo("/opt/apache-tomcat-8.5.32/bin/startup.sh")
+          sudo("/opt/apache-tomcat-8.5.33/bin/startup.sh")
 
 
 
@@ -159,8 +159,6 @@ def rabbitmq_u():
     sudo("echo '[{rabbit, [{loopback_users,[]}]}].'> /etc/rabbitmq/rabbitmq.config")
     sudo("rabbitmqctl add_user test test")
     sudo("rabbitmqctl set_user_tags test administrator")
-
-
 
 
 def rabbitmq_c():
