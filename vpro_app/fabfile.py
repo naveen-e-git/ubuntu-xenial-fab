@@ -121,6 +121,7 @@ def db_u():
      sudo("sed -i 's/127.0.0.1/0.0.0.0/' /etc/mysql/mysql.conf.d/mysqld.cnf")
      sudo("mysql -u root -e \"create database accounts\" --password='root';")
      sudo("mysql -u root -e  \"grant all privileges on *.* TO 'root'@'app.com' identified by 'root'\" --password='root';")
+     sudo("mysql -u root -e  \"grant all privileges on *.* TO 'root'@'%' identified by 'root'\" --password='root';")
      sudo("mysql -u root --password='root' accounts < /root/VProfile/src/main/resources/db_backup.sql;")
      sudo("mysql -u root -e \"FLUSH PRIVILEGES\" --password='root';")
      sudo("systemctl restart mysql")
