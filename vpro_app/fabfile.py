@@ -108,7 +108,7 @@ def db_c():
      sudo("echo \"bind-address = 0.0.0.0\" >> /etc/my.cnf")
      sudo("mysql -u root -e \"create database accounts\" --password='';")
      sudo("mysql -u root -e  \"grant all privileges on *.* TO 'root'@'app.com' identified by 'root'\" --password='';")
-     sudo("mysql -u root  accounts < /root/VProfile/src/main/resources/db_backup.sql;")
+     sudo("mysql -u root --password=''  accounts < /root/VProfile/src/main/resources/db_backup.sql;")
      sudo("mysql -u root -e \"FLUSH PRIVILEGES\" --password='';")
      sudo("systemctl start mariadb")
 
