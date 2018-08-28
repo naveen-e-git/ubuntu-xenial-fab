@@ -29,7 +29,6 @@ def centos():
     rabbitmq_c()
 
 
-######################################### 
 
 def ci_u():
      sudo("apt-get update -y")
