@@ -138,9 +138,9 @@ def lb_c():
 
 def lb_u():
      sudo("apt install nginx -y")
-     sudo("cp /root/vproapp /etc/nginx/site-available/vproapp")
-     sudo("rm -rf /etc/nginx/site-enabled/default")
-     sudo("ln -s /etc/nginx/site-available/vproapp /etc/nginx/site-enabled/")
+     sudo("cp /root/vproapp /etc/nginx/sites-available/vproapp")
+     sudo("rm -rf /etc/nginx/sites-enabled/default")
+     sudo("ln -s /etc/nginx/sites-available/vproapp /etc/nginx/sites-enabled/")
      sudo("sudo systemctl restart nginx")
 
 def memcache_c():
